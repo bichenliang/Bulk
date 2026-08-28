@@ -129,6 +129,45 @@
             background-color: var(--gold-hover);
         }
 
+        /* ==========【新增顶部Banner样式】========== */
+        .top-banner {
+            width: 100%;
+            min-height: 420px;
+            background: linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.82)), url("https://images.unsplash.com/photo-1591637333629-7c8384a22e83?q=80&w=1920") center/cover no-repeat;
+            display:flex;
+            align-items:center;
+        }
+        .banner-inner{
+            padding:60px 24px;
+        }
+        .banner-inner h1{
+            color:var(--gold);
+            font-size:48px;
+            margin-bottom:16px;
+        }
+        .banner-inner p{
+            font-size:18px;
+            max-width:720px;
+            color:var(--text-light);
+        }
+        /* ==========【新增大宗商品数据板块样式】========== */
+        #economic-data{
+            padding:70px 0;
+        }
+        .iframe-wrap{
+            width:100%;
+            height:520px;
+            border:1px solid rgba(212,175,55,0.24);
+            border-radius:12px;
+            overflow:hidden;
+            background:#0c0c0c;
+        }
+        .iframe-wrap iframe{
+            width:100%;
+            height:100%;
+            border:none;
+        }
+
         .hero {
             padding: 80px 0;
         }
@@ -240,6 +279,15 @@
         }
 
         @media (max-width: 768px) {
+            .top-banner{
+                min-height:300px;
+            }
+            .banner-inner h1{
+                font-size:32px;
+            }
+            .iframe-wrap{
+                height:360px;
+            }
             .hero h1 {
                 font-size: 30px;
             }
@@ -277,6 +325,11 @@
             <a href="#home" class="lang-cn">首页</a>
             <a href="#home" class="lang-ru">Главная</a>
 
+            <!-- ==========【新增导航：大宗商品经济数据】========== -->
+            <a href="#economic-data" class="lang-en">Economic‑Trading Data</a>
+            <a href="#economic-data" class="lang-cn">大宗商品行情</a>
+            <a href="#economic-data" class="lang-ru">Данные торгов</a>
+
             <a href="#target" class="lang-en">Target Goods</a>
             <a href="#target" class="lang-cn">采购商品</a>
             <a href="#target" class="lang-ru">Закупаемые товары</a>
@@ -301,6 +354,37 @@
         </div>
     </div>
 </nav>
+
+<!-- ==========【新增顶部全屏Banner区块】========== -->
+<div class="top-banner">
+    <div class="container banner-inner">
+        <div class="lang-en">
+            <h1>GLOBAL LARGE‑VOLUME COMMODITY BUYER</h1>
+            <p>Powerful procurement institution, worldwide sourcing for copper, aluminum and bulk raw materials. Genuine suppliers are welcome to send offers.</p>
+        </div>
+        <div class="lang-cn">
+            <h1>全球大宗商品大额采购商</h1>
+            <p>实力采购机构，全球采购电解铜、铝锭等大宗原料，欢迎真实供应商提交供货报价。</p>
+        </div>
+        <div class="lang-ru">
+            <h1>КРУПНЫЙ ГЛОБАЛЬНЫЙ ПОКУПАТЕЛЬ СЫРЬЯ</h1>
+            <p>Мощная закупочная организация, закуп меди, алюминия и другого сырья по всему миру. Приглашаем надёжных поставщиков.</p>
+        </div>
+    </div>
+</div>
+
+<!-- ==========【新增大宗商品行情嵌入板块】========== -->
+<section id="economic-data">
+    <div class="container">
+        <h2 class="lang-en">Global Economic & Commodity Trading Data</h2>
+        <h2 class="lang-cn">全球大宗商品交易行情参考</h2>
+        <h2 class="lang-ru">Данные мировых товарных бирж</h2>
+        <div class="iframe-wrap">
+            <!-- 注意：很多外部网站禁止iframe，加载空白属于对方网站限制，不是代码bug -->
+            <iframe src="https://tradingeconomics.com/commodities" title="Commodity market data"></iframe>
+        </div>
+    </div>
+</section>
 
 <div class="container hero" id="home">
     <div class="lang-en">
