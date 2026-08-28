@@ -477,43 +477,88 @@
             </div>
         </div>
     </div>
-</section>
-
 <section id="contact">
     <div class="container">
-        <h2 class="lang-en">Suppliers — Send Us Your Offer</h2>
-        <h2 class="lang-cn">供应商 — 提交供货报价</h2>
-        <h2 class="lang-ru">Поставщики — присылайте ваше предложение</h2>
-        <div class="card" style="max-width: 740px;">
-            <p>
-                <strong class="lang-en">Contact Person:</strong>
-                <strong class="lang-cn">联系人：</strong>
-                <strong class="lang-ru">Контактное лицо:</strong>
-                Mr. Bill Gatsby
+        <h2 class="lang-en">Suppliers Submission</h2>
+        <h2 class="lang-cn">供应商提交资料</h2>
+        <h2 class="lang-ru">Отправка данных поставщика</h2>
+        <div class="card" style="max-width:740px;margin:0 auto;">
+            <p class="lang-en">
+                <strong>Important Notice:</strong><br>
+                You MUST attach 3 PDF documents: Bill of Lading, Certificate of Origin, SGS Test Report.<br>
+                Screenshots, photos, image‑only files are invalid. Brokers / middlemen will receive NO reply.
             </p>
-            <p>bilgatsby@foxmail.com</p>
-            <p>service@gempop.vip</p>
-            <p>auragempop@gmail.com</p>
-            <hr>
-            <p class="lang-en">Fill in your supply information below, then please send your complete offer directly to our email address.</p>
-            <p class="lang-cn">请在下方填写供货信息，将完整报价直接发送至以上邮箱。</p>
-            <p class="lang-ru">Заполните информацию о поставке ниже, отправьте полное предложение на наши почтовые адреса.</p>
+            <p class="lang-cn">
+                <strong>重要提示：</strong><br>
+                必须附带3份PDF文件：历史提单、原产地证书、SGS检测报告。<br>
+                截图、照片无效，中介经纪人不予回复。
+            </p>
+            <p class="lang-ru">
+                <strong>Важно:</strong><br>
+                Обязательно приложите 3 PDF‑документа: коносамент, сертификат происхождения, отчёт SGS.<br>
+                Скриншоты и фотографии не принимаются. Посредники не получат ответа.
+            </p>
 
-            <form>
-                <input type="text" id="inpCompany">
-                <input type="text" id="inpContact">
-                <input type="text" id="inpGoods">
-                <textarea rows="5" id="inpDetail"></textarea>
+            <div style="margin:20px 0;">
+                <input type="text" id="sup_company" placeholder="Company Name / 公司名称" required>
+                <input type="text" id="sup_contact" placeholder="Contact Person / 联系人" required>
+                <input type="text" id="sup_method" placeholder="Email / WhatsApp" required>
+                <input type="text" id="sup_product" placeholder="Product & Monthly Volume / 商品与月供应量" required>
+                <textarea rows="5" id="sup_note" placeholder="Price, delivery terms and other remarks / 报价、交货条款及其他说明"></textarea>
 
-                <button type="button" class="btn-solid" id="submitBtn">
-                    <span class="lang-en">Prepare Offer Information</span>
-                    <span class="lang-cn">整理报价信息</span>
-                    <span class="lang-ru">Подготовить данные предложения</span>
+                <button type="button" class="btn-solid" onclick="openMailTo()">
+                    <span class="lang-en">Prepare Email Draft</span>
+                    <span class="lang-cn">生成邮件草稿</span>
+                    <span class="lang-ru">Создать черновик письма</span>
                 </button>
-            </form>
+
+                <div id="mailtip" style="margin-top:16px;color:#ffb86c;display:none;">
+                    <p class="lang-en">Your browser mail client did not launch. Please copy the content below and send manually.</p>
+                    <p class="lang-cn">未能唤起本地邮件软件，请复制下面内容手动发送邮件。</p>
+                    <p class="lang-ru">Почтовый клиент не запустился, скопируйте текст и отправьте вручную.</p>
+                    <textarea id="mail_text" readonly style="width:100%;height:180px;"></textarea>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
+<script>
+function openMailTo(){
+    const company = document.getElementById("sup_company").value;
+    const contact = document.getElementById("sup_contact").value;
+    const method = document.getElementById("sup_method").value;
+    const product = document.getElementById("sup_product").value;
+    const note = document.getElementById("sup_note").value;
+
+    const subject = "Supplier Offer Submission";
+    const bodyText =
+`Company Name: ${company}
+Contact Person: ${contact}
+Contact: ${method}
+Product & Volume: ${product}
+Remarks: ${note}
+
+============================
+MUST ATTACH 3 PDF DOCUMENTS:
+1. Previous Bill of Lading
+2. Certificate of Origin
+3. SGS Test Report
+
+NO PDF ATTACHED — NO RESPONSE.
+Screenshots / photos / brokers will be ignored.
+============================`;
+
+    const mailtoLink = `mailto:service@xxx.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
+
+    try{
+        window.location.href = mailtoLink;
+    }catch(e){
+        document.getElementById("mailtip").style.display = "block";
+        document.getElementById("mail_text").value = bodyText;
+    }
+}
+</script>
 
 <footer>
     <div class="container">
