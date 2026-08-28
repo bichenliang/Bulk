@@ -610,13 +610,21 @@
 </footer>
 
 <script>
-//双重置顶，压制第三方iframe偷偷向下滚动
-function resetScrollTop(){
-    window.scrollTo({top:0,left:0,behavior:"instant"});
+// 锁死页面顶部，拦截第三方iframe造成的滚动跳转
+let blockScroll = true;
+function forceTop(){
+    window.scrollTo(0,0);
 }
-document.addEventListener('DOMContentLoaded',resetScrollTop);
-window.addEventListener('load',resetScrollTop);
-setTimeout(resetScrollTop,800);
+// 任何滚动事件立刻拉回顶部
+window.addEventListener('scroll',()=>{
+    if(blockScroll) forceTop();
+});
+
+document.addEventListener('DOMContentLoaded',forceTop);
+window.addEventListener('load',forceTop);
+setTimeout(forceTop,400);
+setTimeout(forceTop,900);
+setTimeout(()=>{blockScroll=false;},1200);
 
 const body = document.body;
 const btns = document.querySelectorAll(".lang-group button");
