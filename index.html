@@ -129,7 +129,6 @@
             background-color: var(--gold-hover);
         }
 
-        /* ==========【新增顶部Banner样式】========== */
         .top-banner {
             width: 100%;
             min-height: 420px;
@@ -150,7 +149,7 @@
             max-width:720px;
             color:var(--text-light);
         }
-        /* ==========【新增大宗商品数据板块样式】========== */
+
         #economic-data{
             padding:70px 0;
         }
@@ -317,15 +316,15 @@
     </style>
 </head>
 <body data-lang="en">
+<div id="top"></div>
 <nav>
     <div class="container nav-wrap">
         <div class="logo">BILLIONAIRE INVESTMENTS CO LTD</div>
         <div class="nav-links">
-            <a href="#home" class="lang-en">Home</a>
-            <a href="#home" class="lang-cn">首页</a>
-            <a href="#home" class="lang-ru">Главная</a>
+            <a href="#top" class="lang-en">Home</a>
+            <a href="#top" class="lang-cn">首页</a>
+            <a href="#top" class="lang-ru">Главная</a>
 
-            <!-- 修改为页内锚点，不再跳转独立页面 -->
             <a href="#economic-data" class="lang-en">Economic‑Trading Data</a>
             <a href="#economic-data" class="lang-cn">大宗商品行情</a>
             <a href="#economic-data" class="lang-ru">Данные торгов</a>
@@ -355,7 +354,6 @@
     </div>
 </nav>
 
-<!-- ==========【新增顶部全屏Banner区块】========== -->
 <div class="top-banner">
     <div class="container banner-inner">
         <div class="lang-en">
@@ -373,14 +371,12 @@
     </div>
 </div>
 
-<!-- ==========【行情板块直接放在首页Banner下方，主页内展示】========== -->
 <section id="economic-data">
     <div class="container">
         <h2 class="lang-en">Global Economic & Commodity Trading Data</h2>
         <h2 class="lang-cn">全球大宗商品交易行情参考</h2>
         <h2 class="lang-ru">Данные мировых товарных бирж</h2>
         <div class="iframe-wrap">
-            <!-- 注意：很多外部网站禁止iframe，加载空白属于对方网站限制，不是代码bug -->
             <iframe src="https://tradingeconomics.com/commodities" title="Commodity market data"></iframe>
         </div>
         <p style="margin-top:12px;font-size:13px;color:#777;text-align:right;">
@@ -391,7 +387,7 @@
     </div>
 </section>
 
-<div class="container hero" id="home">
+<div class="container hero">
     <div class="lang-en">
         <h1>Global Sourcing — We Are Large‑Volume Buyer From China</h1>
         <p><strong>BILLIONAIRE INVESTMENTS CO LTD</strong> is a professional large‑scale procurement enterprise led by Mr. Bill Gatsby. We purchase bulk commodities worldwide and import goods into China. Reliable long‑term buyer, stable large‑quantity demand, fast payment terms. Welcome genuine suppliers to contact us with your offer.</p>
@@ -614,6 +610,11 @@
 </footer>
 
 <script>
+//页面加载强制回到顶部，修复打开页面自动往下跳的bug
+document.addEventListener('DOMContentLoaded',function(){
+    window.scrollTo(0,0);
+});
+
 const body = document.body;
 const btns = document.querySelectorAll(".lang-group button");
 
