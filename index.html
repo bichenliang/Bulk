@@ -232,11 +232,9 @@
         [data-lang="en"] .lang-en {
             display: block;
         }
-
         [data-lang="cn"] .lang-cn {
             display: block;
         }
-
         [data-lang="ru"] .lang-ru {
             display: block;
         }
@@ -245,32 +243,25 @@
             .hero h1 {
                 font-size: 30px;
             }
-
             h2 {
                 font-size: 26px;
             }
-
             .grid-3 {
                 grid-template-columns: 1fr;
             }
-
             .hero {
                 padding: 50px 0;
             }
-
             section {
                 padding: 44px 0;
             }
-
             .nav-links {
                 margin-top: 12px;
                 gap: 12px;
             }
-
             .container {
                 padding: 0 18px;
             }
-
             .card {
                 padding: 22px;
             }
@@ -477,6 +468,8 @@
             </div>
         </div>
     </div>
+</section>
+
 <section id="contact">
     <div class="container">
         <h2 class="lang-en">Suppliers Submission</h2>
@@ -496,15 +489,15 @@
             <p class="lang-ru">
                 <strong>Важно:</strong><br>
                 Обязательно приложите 3 PDF‑документа: коносамент, сертификат происхождения, отчёт SGS.<br>
-                Скриншоты и фотографии не принимаются. Посредники не получат ответа.
+                Скриншоты и фотографии не принимаются.Посредники не получат ответа.
             </p>
 
             <div style="margin:20px 0;">
-                <input type="text" id="sup_company" placeholder="Company Name / 公司名称" required>
-                <input type="text" id="sup_contact" placeholder="Contact Person / 联系人" required>
-                <input type="text" id="sup_method" placeholder="Email / WhatsApp" required>
-                <input type="text" id="sup_product" placeholder="Product & Monthly Volume / 商品与月供应量" required>
-                <textarea rows="5" id="sup_note" placeholder="Price, delivery terms and other remarks / 报价、交货条款及其他说明"></textarea>
+                <input type="text" id="sup_company">
+                <input type="text" id="sup_contact">
+                <input type="text" id="sup_method">
+                <input type="text" id="sup_product">
+                <textarea rows="5" id="sup_note"></textarea>
 
                 <button type="button" class="btn-solid" onclick="openMailTo()">
                     <span class="lang-en">Prepare Email Draft</span>
@@ -523,547 +516,50 @@
     </div>
 </section>
 
-<script>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Bulk Buyer | BILLIONAIRE INVESTMENTS CO LTD</title>
-    <style>
-        :root {
-            --black: #000000;
-            --dark-bg: #0a0a0a;
-            --dark-card: #111111;
-            --gold: #d4af37;
-            --gold-hover: #e6c868;
-            --text-main: #c8c8c8;
-            --text-light: #e0e0e0;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: var(--black);
-            color: var(--text-main);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.75;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        nav {
-            background-color: rgba(0, 0, 0, 0.96);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 99;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.18);
-        }
-
-        .nav-wrap {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            min-height: 76px;
-            padding: 14px 0;
-        }
-
-        .logo {
-            color: var(--gold);
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .nav-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 18px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 15px;
-            transition: 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--gold);
-        }
-
-        .lang-group button {
-            background: transparent;
-            border: 1px solid rgba(212, 175, 55, 0.45);
-            color: var(--text-main);
-            padding: 5px 10px;
-            margin-left: 6px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        .lang-group button.active {
-            background-color: var(--gold);
-            color: #000000;
-            border-color: var(--gold);
-            font-weight: 600;
-        }
-
-        .btn {
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            padding: 10px 22px;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: 0.22s;
-            white-space: nowrap;
-            font-size: 15px;
-        }
-
-        .btn:hover {
-            background-color: var(--gold);
-            color: #000;
-        }
-
-        .btn-solid {
-            background-color: var(--gold);
-            color: #000000;
-            border: none;
-            padding: 13px 30px;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 15px;
-            cursor: pointer;
-            transition: 0.22s;
-        }
-
-        .btn-solid:hover {
-            background-color: var(--gold-hover);
-        }
-
-        .hero {
-            padding: 80px 0;
-        }
-
-        .hero h1 {
-            color: var(--gold);
-            font-size: 44px;
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
-
-        .hero p {
-            color: var(--text-main);
-            font-size: 17px;
-            max-width: 680px;
-            margin-bottom: 32px;
-        }
-
-        section {
-            padding: 60px 0;
-        }
-
-        h2 {
-            color: var(--gold);
-            font-size: 32px;
-            margin-bottom: 36px;
-            line-height: 1.3;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(302px, 1fr));
-            gap: 24px;
-        }
-
-        .card {
-            background: var(--dark-card);
-            border: 1px solid rgba(212, 175, 55, 0.24);
-            border-radius: 14px;
-            padding: 28px;
-            transition: transform 0.24s ease, border-color 0.24s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(212, 175, 55, 0.65);
-        }
-
-        .card h3 {
-            color: var(--gold);
-            margin-bottom: 14px;
-            font-size: 20px;
-        }
-
-        .card p {
-            color: var(--text-main);
-        }
-
-        footer {
-            border-top: 1px solid rgba(212, 175, 55, 0.18);
-            padding: 36px 0;
-            margin-top: 24px;
-            background-color: var(--black);
-        }
-
-        footer p {
-            color: var(--text-main);
-            font-size: 14px;
-        }
-
-        input,
-        textarea {
-            width: 100%;
-            background: #1a1a1a;
-            border: 1px solid rgba(212, 175, 55, 0.28);
-            color: var(--text-light);
-            padding: 13px 15px;
-            border-radius: 6px;
-            margin-bottom: 18px;
-            font-size: 15px;
-        }
-
-        input:focus,
-        textarea:focus {
-            outline: none;
-            border-color: var(--gold);
-        }
-
-        hr {
-            border: none;
-            border-top: 1px solid rgba(212, 175, 55, 0.24);
-            margin: 24px 0;
-        }
-
-        .lang-en,
-        .lang-cn,
-        .lang-ru {
-            display: none;
-        }
-
-        [data-lang="en"] .lang-en {
-            display: block;
-        }
-
-        [data-lang="cn"] .lang-cn {
-            display: block;
-        }
-
-        [data-lang="ru"] .lang-ru {
-            display: block;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 30px;
-            }
-
-            h2 {
-                font-size: 26px;
-            }
-
-            .grid-3 {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                padding: 50px 0;
-            }
-
-            section {
-                padding: 44px 0;
-            }
-
-            .nav-links {
-                margin-top: 12px;
-                gap: 12px;
-            }
-
-            .container {
-                padding: 0 18px;
-            }
-
-            .card {
-                padding: 22px;
-            }
-        }
-    </style>
-</head>
-<body data-lang="en">
-<nav>
-    <div class="container nav-wrap">
-        <div class="logo">BILLIONAIRE INVESTMENTS CO LTD</div>
-        <div class="nav-links">
-            <a href="#home" class="lang-en">Home</a>
-            <a href="#home" class="lang-cn">首页</a>
-            <a href="#home" class="lang-ru">Главная</a>
-
-            <a href="#target" class="lang-en">Target Goods</a>
-            <a href="#target" class="lang-cn">采购商品</a>
-            <a href="#target" class="lang-ru">Закупаемые товары</a>
-
-            <a href="#strength" class="lang-en">Our Strength</a>
-            <a href="#strength" class="lang-cn">我们优势</a>
-            <a href="#strength" class="lang-ru">Наши преимущества</a>
-
-            <a href="#about" class="lang-en">About Us</a>
-            <a href="#about" class="lang-cn">关于我们</a>
-            <a href="#about" class="lang-ru">О нас</a>
-
-            <a href="#contact" class="btn lang-en">Offer Your Supply</a>
-            <a href="#contact" class="btn lang-cn">提交供货</a>
-            <a href="#contact" class="btn lang-ru">Предложить поставку</a>
-
-            <div class="lang-group">
-                <button data-set="en" class="active">EN</button>
-                <button data-set="cn">中文</button>
-                <button data-set="ru">RU</button>
-            </div>
-        </div>
-    </div>
-</nav>
-
-<div class="container hero" id="home">
-    <div class="lang-en">
-        <h1>Global Sourcing — We Are Large‑Volume Buyer From China</h1>
-        <p><strong>BILLIONAIRE INVESTMENTS CO LTD</strong> is a professional large‑scale procurement enterprise led by Mr. Bill Gatsby. We purchase bulk commodities worldwide and import goods into China. Reliable long‑term buyer, stable large‑quantity demand, fast payment terms. Welcome genuine suppliers to contact us with your offer.</p>
-        <a href="#contact" class="btn">Submit Your Supply Offer</a>
-    </div>
-    <div class="lang-cn">
-        <h1>全球采购 — 来自中国的大批量采购商</h1>
-        <p><strong>BILLIONAIRE INVESTMENTS CO LTD</strong>由Bill Gatsby先生领导，是专业大宗商品采购企业。我们面向全球采购大宗货物并进口至中国；长期稳定大批量采购、付款条件可靠，欢迎真实供应商发来报价。</p>
-        <a href="#contact" class="btn">提交供货报价</a>
-    </div>
-    <div class="lang-ru">
-        <h1>Глобальные закупки — крупный покупатель из Китая</h1>
-        <p><strong>BILLIONAIRE INVESTMENTS CO LTD</strong> — профессиональная компания по крупным закупкам под руководством г‑на Билла Гэтсби. Мы закупаем сырьё по всему миру для импорта в Китай. Стабильные большие объёмы, надёжные условия оплаты. Приглашаем надёжных поставщиков присылать предложения.</p>
-        <a href="#contact" class="btn">Отправить предложение поставки</a>
-    </div>
-</div>
-
-<section id="about">
+<footer>
     <div class="container">
-        <h2 class="lang-en">About Us</h2>
-        <h2 class="lang-cn">关于我们</h2>
-        <h2 class="lang-ru">О нас</h2>
-        <div class="card">
-            <h3>BILLIONAIRE INVESTMENTS CO LTD</h3>
-            <div class="lang-en">
-                <p>Under the leadership of Mr. Bill Gatsby, as a powerful commodity purchasing enterprise based in China, we focus on global bulk‑goods procurement business. We establish stable cooperative relationships with qualified manufacturers and genuine suppliers all over the world. Our core advantage lies in sufficient purchasing budget, standardized international settlement, and continuous large‑volume procurement requirements. We sincerely look forward to establishing long‑term win‑win partnerships with trustworthy suppliers.</p>
-            </div>
-            <div class="lang-cn">
-                <p>在Bill Gatsby先生主导下，本公司立足于中国开展全球大宗商品采购业务，与全球合规工厂、真实供应商建立稳定合作。采购资金充足、国际结算规范、持续大额采购；期待与诚信供应商达成长期共赢合作。</p>
-            </div>
-            <div class="lang-ru">
-                <p>Под руководством г‑на Билла Гэтсби компания занимается глобальными оптовыми закупками. Мы строим долгосрочные отношения с производителями и надёжными поставщиками по всему миру. Большой бюджет закупок, стандартные международные расчёты, постоянный большой спрос. Ищем взаимовыгодное долгосрочное сотрудничество.</p>
-            </div>
-        </div>
+        <p class="lang-en">© 2026 BILLIONAIRE INVESTMENTS CO LTD | bulk.gempop.vip</p>
+        <p class="lang-cn">© 2026 BILLIONAIRE INVESTMENTS CO LTD | bulk.gempop.vip</p>
+        <p class="lang-ru">© 2026 BILLIONAIRE INVESTMENTS CO LTD, все права защищены | bulk.gempop.vip</p>
     </div>
-</section>
-
-<section id="target">
-    <div class="container">
-        <h2 class="lang-en">Commodities We Are Looking For</h2>
-        <h2 class="lang-cn">我们采购的商品</h2>
-        <h2 class="lang-ru">Закупаемые товары</h2>
-        <div class="grid-3">
-            <div class="card">
-                <h3 class="lang-en">Electrolytic Copper</h3>
-                <h3 class="lang-cn">电解铜</h3>
-                <h3 class="lang-ru">Электролитическая медь</h3>
-                <div class="lang-en">
-                    <p>Large continuous buying demand<br>Large‑volume spot & long‑term contract orders</p>
-                </div>
-                <div class="lang-cn">
-                    <p>持续大量采购需求<br>大量现货及长期合同订单</p>
-                </div>
-                <div class="lang-ru">
-                    <p>Постоянный большой спрос<br>Крупные спотовые и долгосрочные контракты</p>
-                </div>
-            </div>
-            <div class="card">
-                <h3 class="lang-en">Aluminum Ingot</h3>
-                <h3 class="lang-cn">铝锭</h3>
-                <h3 class="lang-ru">Алюминиевые слитки</h3>
-                <div class="lang-en">
-                    <p>Regular bulk procurement<br>Interested in stable genuine suppliers</p>
-                </div>
-                <div class="lang-cn">
-                    <p>定期大批量采购<br>寻找稳定真实供应商</p>
-                </div>
-                <div class="lang-ru">
-                    <p>Регулярные оптовые закупки<br>Ищем стабильных надёжных поставщиков</p>
-                </div>
-            </div>
-            <div class="card">
-                <h3 class="lang-en">Sulphur</h3>
-                <h3 class="lang-cn">硫磺</h3>
-                <h3 class="lang-ru">Сера</h3>
-                <div class="lang-en">
-                    <p>Large‑quantity monthly requirement<br>Competitive real price expected</p>
-                </div>
-                <div class="lang-cn">
-                    <p>每月大量采购<br>希望拿到有竞争力的实际价格</p>
-                </div>
-                <div class="lang-ru">
-                    <p>Большие месячные объёмы<br>Ожидаем конкурентоспособную реальную цену</p>
-                </div>
-            </div>
-            <div class="card">
-                <h3 class="lang-en">LNG</h3>
-                <h3 class="lang-cn">液化天然气</h3>
-                <h3 class="lang-ru">СПГ</h3>
-                <div class="lang-en">
-                    <p>Long‑term bulk energy procurement<br>Serious large‑volume cooperation</p>
-                </div>
-                <div class="lang-cn">
-                    <p>长期大宗能源采购<br>严肃大额合作意向</p>
-                </div>
-                <div class="lang-ru">
-                    <p>Долгосрочные крупные закупки энергоресурсов<br>Серьёзные большие объёмы сотрудничества</p>
-                </div>
-            </div>
-            <div class="card">
-                <h3>EN 590</h3>
-                <div class="lang-en">
-                    <p>Looking for qualified direct source<br>Ready for large‑volume purchase</p>
-                </div>
-                <div class="lang-cn">
-                    <p>寻找合格直接货源<br>可大批量采购</p>
-                </div>
-                <div class="lang-ru">
-                    <p>Ищем прямого квалифицированного поставщика<br>Готовы к большим объёмам закупки</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="strength">
-    <div class="container">
-        <h2 class="lang-en">Why Cooperate With Us</h2>
-        <h2 class="lang-cn">为何选择与我们合作</h2>
-        <h2 class="lang-ru">Почему стоит сотрудничать с нами</h2>
-        <div class="grid-3">
-            <div class="card">
-                <h3 class="lang-en">Strong Buying Capacity</h3>
-                <h3 class="lang-cn">强大采购实力</h3>
-                <h3 class="lang-ru">Большая покупательская способность</h3>
-                <div class="lang-en">
-                    <p>Large‑volume regular procurement, not one‑off small trial order.</p>
-                </div>
-                <div class="lang-cn">
-                    <p>稳定大批量采购，不是一次性小试单。</p>
-                </div>
-                <div class="lang-ru">
-                    <p>Регулярные крупные закупки, не разовые мелкие пробные заказы.</p>
-                </div>
-            </div>
-            <div class="card">
-                <h3 class="lang-en">Reliable Payment</h3>
-                <h3 class="lang-cn">付款安全可靠</h3>
-                <h3 class="lang-ru">Надёжные платежи</h3>
-                <div class="lang-en">
-                    <p>Standard international payment terms, smooth and timely settlement.</p>
-                </div>
-                <div class="lang-cn">
-                    <p>标准国际付款条款，结算顺畅及时。</p>
-                </div>
-                <div class="lang-ru">
-                    <p>Стандартные международные условия оплаты, своевременные расчёты.</p>
-                </div>
-            </div>
-            <div class="card">
-                <h3 class="lang-en">Long‑Term Partnership</h3>
-                <h3 class="lang-cn">长期伙伴关系</h3>
-                <h3 class="lang-ru">Долгосрочное партнёрство</h3>
-                <div class="lang-en">
-                    <p>We build stable long‑term relationships with qualified genuine suppliers globally.</p>
-                </div>
-                <div class="lang-cn">
-                    <p>我们与全球合规真实供应商建立稳定长期合作。</p>
-                </div>
-                <div class="lang-ru">
-                    <p>Мы строим стабильные долгосрочные связи с надёжными поставщиками со всего мира.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-<section id="contact">
-    <div class="container">
-        <h2 class="lang-en">Suppliers Submission</h2>
-        <h2 class="lang-cn">供应商提交资料</h2>
-        <h2 class="lang-ru">Отправка данных поставщика</h2>
-        <div class="card" style="max-width:740px;margin:0 auto;">
-            <p class="lang-en">
-                <strong>Important Notice:</strong><br>
-                You MUST attach 3 PDF documents: Bill of Lading, Certificate of Origin, SGS Test Report.<br>
-                Screenshots, photos, image‑only files are invalid. Brokers / middlemen will receive NO reply.
-            </p>
-            <p class="lang-cn">
-                <strong>重要提示：</strong><br>
-                必须附带3份PDF文件：历史提单、原产地证书、SGS检测报告。<br>
-                截图、照片无效，中介经纪人不予回复。
-            </p>
-            <p class="lang-ru">
-                <strong>Важно:</strong><br>
-                Обязательно приложите 3 PDF‑документа: коносамент, сертификат происхождения, отчёт SGS.<br>
-                Скриншоты и фотографии не принимаются. Посредники не получат ответа.
-            </p>
-
-            <div style="margin:20px 0;">
-                <input type="text" id="sup_company" placeholder="Company Name / 公司名称" required>
-                <input type="text" id="sup_contact" placeholder="Contact Person / 联系人" required>
-                <input type="text" id="sup_method" placeholder="Email / WhatsApp" required>
-                <input type="text" id="sup_product" placeholder="Product & Monthly Volume / 商品与月供应量" required>
-                <textarea rows="5" id="sup_note" placeholder="Price, delivery terms and other remarks / 报价、交货条款及其他说明"></textarea>
-
-                <button type="button" class="btn-solid" onclick="openMailTo()">
-                    <span class="lang-en">Prepare Email Draft</span>
-                    <span class="lang-cn">生成邮件草稿</span>
-                    <span class="lang-ru">Создать черновик письма</span>
-                </button>
-
-                <div id="mailtip" style="margin-top:16px;color:#ffb86c;display:none;">
-                    <p class="lang-en">Your browser mail client did not launch. Please copy the content below and send manually.</p>
-                    <p class="lang-cn">未能唤起本地邮件软件，请复制下面内容手动发送邮件。</p>
-                    <p class="lang-ru">Почтовый клиент не запустился, скопируйте текст и отправьте вручную.</p>
-                    <textarea id="mail_text" readonly style="width:100%;height:180px;"></textarea>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+</footer>
 
 <script>
-function openMailTo(){
-    const company = document.getElementById("sup_company").value;
-    const contact = document.getElementById("sup_contact").value;
-    const method = document.getElementById("sup_method").value;
-    const product = document.getElementById("sup_product").value;
-    const note = document.getElementById("sup_note").value;
+const body = document.body;
+const btns = document.querySelectorAll(".lang-group button");
 
-    const subject = "Supplier Offer Submission";
-    const bodyText =
-`Company Name: ${company}
-Contact Person: ${contact}
-Contact: ${method}
-Product & Volume: ${product}
-Remarks: ${note}
+const placeholders = {
+    en:{
+        company:"Company Name",
+        contact:"Contact Person",
+        method:"Email / WhatsApp",
+        product:"Product & Monthly Volume",
+        note:"Price, delivery terms and other remarks"
+    },
+    cn:{
+        company:"公司名称",
+        contact:"联系人",
+        method:"邮箱 / WhatsApp",
+        product:"商品与月供应量",
+        note:"报价、交货条款及其他说明"
+    },
+    ru:{
+        company:"Название компании",
+        contact:"Контактное лицо",
+        method:"Email / WhatsApp",
+        product:"Товар и месячный объём",
+        note:"Цена, условия поставки и прочие комментарии"
+    }
+};
+
+const mailTemplate = {
+    en:{
+        subject:"Supplier Offer Submission",
+        body:`Company Name: {{company}}
+Contact Person: {{contact}}
+Contact: {{method}}
+Product & Volume: {{product}}
+Remarks: {{note}}
 
 ============================
 MUST ATTACH 3 PDF DOCUMENTS:
@@ -1073,165 +569,91 @@ MUST ATTACH 3 PDF DOCUMENTS:
 
 NO PDF ATTACHED — NO RESPONSE.
 Screenshots / photos / brokers will be ignored.
-============================`;
+============================`
+    },
+    cn:{
+        subject:"供应商供货报价提交",
+        body:`公司名称：{{company}}
+联系人：{{contact}}
+联系方式：{{method}}
+商品与月供应量：{{product}}
+备注：{{note}}
 
-    const mailtoLink = `mailto:service@xxx.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
+============================
+必须附上3份PDF文件：
+1.历史提单
+2.原产地证书
+3.SGS检测报告
 
-    try{
-        window.location.href = mailtoLink;
-    }catch(e){
-        document.getElementById("mailtip").style.display = "block";
-        document.getElementById("mail_text").value = bodyText;
+没有PDF附件不予回复，截图、照片、中介将被忽略。
+============================`
+    },
+    ru:{
+        subject:"Предложение поставщика",
+        body:`Название компании: {{company}}
+Контактное лицо: {{contact}}
+Контакты: {{method}}
+Товар и объём: {{product}}
+Примечания: {{note}}
+
+============================
+ОБЯЗАТЕЛЬНО ПРИЛОЖИТЕ 3 PDF‑ДОКУМЕНТА:
+1.Предыдущий коносамент
+2.Сертификат происхождения
+3.Отчёт SGS
+
+Без PDF‑файлов ответ не даём. Скриншоты, фото, посредники игнорируются.
+============================`
     }
-}
-</script>
+};
 
-<footer>
-    <div class="container">
-        <p>© 2026 BILLIONAIRE INVESTMENTS CO LTD | bulk.gempop.vip</p>
-    </div>
-</footer>
-
-<script>
-    const body = document.body;
-    const btns = document.querySelectorAll(".lang-group button");
-    const submitBtn = document.getElementById("submitBtn");
-
-    const placeholders = {
-        en:{
-            company:"Your Company Name",
-            contact:"Contact Name",
-            goods:"Commodity & Quantity",
-            detail:"Price, origin, available stock, specification, payment terms…"
-        },
-        cn:{
-            company:"贵司名称",
-            contact:"联系人",
-            goods:"商品名称及数量",
-            detail:"价格、产地、现货量、规格、付款条件……"
-        },
-        ru:{
-            company:"Название вашей компании",
-            contact:"Контактное лицо",
-            goods:"Товар и объём",
-            detail:"Цена, происхождение, наличие, спецификации, условия оплаты…"
-        }
-    }
-
-    function setLang(lang) {
-        body.setAttribute("data-lang", lang);
-        btns.forEach((b) => {
-            b.classList.toggle("active", b.dataset.set === lang);
-        });
-        document.getElementById("inpCompany").placeholder = placeholders[lang].company;
-        document.getElementById("inpContact").placeholder = placeholders[lang].contact;
-        document.getElementById("inpGoods").placeholder = placeholders[lang].goods;
-        document.getElementById("inpDetail").placeholder = placeholders[lang].detail;
-    }
-
-    btns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-            setLang(btn.dataset.set);
-        });
+function setLang(lang) {
+    body.setAttribute("data-lang", lang);
+    btns.forEach((b)=>{
+        b.classList.toggle("active", b.dataset.set === lang);
     });
-
-    setLang("en");
-
-    submitBtn.addEventListener("click", () => {
-        const l = body.getAttribute("data-lang");
-        let msg;
-        if (l === "cn") {
-            msg = "请复制填写内容，发送邮件到页面提供邮箱。";
-        } else if (l === "ru") {
-            msg = "Скопируйте введённые данные и отправьте на указанные почтовые адреса.";
-        } else {
-            msg = "Please copy your information and send email to our mailboxes listed above.";
-        }
-        alert(msg);
-    });
-</script>
-</body>
-</html>
-
-    const mailtoLink = `mailto:service@xxx.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
-
-    try{
-        window.location.href = mailtoLink;
-    }catch(e){
-        document.getElementById("mailtip").style.display = "block";
-        document.getElementById("mail_text").value = bodyText;
-    }
-}
-</script>
-
-<footer>
-    <div class="container">
-        <p>© 2026 BILLIONAIRE INVESTMENTS CO LTD | bulk.gempop.vip</p>
-    </div>
-</footer>
-
-<script>
-    const body = document.body;
-    const btns = document.querySelectorAll(".lang-group button");
-    const submitBtn = document.getElementById("submitBtn");
-
-    const placeholders = {
-        en:{
-            company:"Your Company Name",
-            contact:"Contact Name",
-            goods:"Commodity & Quantity",
-            detail:"Price, origin, available stock, specification, payment terms…"
-        },
-        cn:{
-            company:"贵司名称",
-            contact:"联系人",
-            goods:"商品名称及数量",
-            detail:"价格、产地、现货量、规格、付款条件……"
-        },
-        ru:{
-            company:"Название вашей компании",
-            contact:"Контактное лицо",
-            goods:"Товар и объём",
-            detail:"Цена, происхождение, наличие, спецификации, условия оплаты…"
-        }
-    }
-
-    function setLang(lang) {
-        body.setAttribute("data-lang", lang);
-        btns.forEach((b) => {
-            b.classList.toggle("active", b.dataset.set === lang);
-        });
-        document.getElementById("inpCompany").placeholder = placeholders[lang].company;
-        document.getElementById("inpContact").placeholder = placeholders[lang].contact;
-        document.getElementById("inpGoods").placeholder = placeholders[lang].goods;
-        document.getElementById("inpDetail").placeholder = placeholders[lang].detail;
     document.getElementById("sup_company").placeholder = placeholders[lang].company;
-document.getElementById("sup_contact").placeholder = placeholders[lang].contact;
-document.getElementById("sup_method").placeholder = placeholders[lang].goods;
-document.getElementById("sup_product").placeholder = placeholders[lang].goods;
-document.getElementById("sup_note").placeholder = placeholders[lang].detail;
+    document.getElementById("sup_contact").placeholder = placeholders[lang].contact;
+    document.getElementById("sup_method").placeholder = placeholders[lang].method;
+    document.getElementById("sup_product").placeholder = placeholders[lang].product;
+    document.getElementById("sup_note").placeholder = placeholders[lang].note;
+}
+
+btns.forEach((btn)=>{
+    btn.addEventListener("click", ()=>{
+        setLang(btn.dataset.set);
+    });
+});
+
+function openMailTo(){
+    const lang = body.getAttribute("data-lang");
+    const tpl = mailTemplate[lang];
+
+    const company = document.getElementById("sup_company").value;
+    const contact = document.getElementById("sup_contact").value;
+    const method = document.getElementById("sup_method").value;
+    const product = document.getElementById("sup_product").value;
+    const note = document.getElementById("sup_note").value;
+
+    let bodyText = tpl.body
+        .replaceAll("{{company}}",company)
+        .replaceAll("{{contact}}",contact)
+        .replaceAll("{{method}}",method)
+        .replaceAll("{{product}}",product)
+        .replaceAll("{{note}}",note);
+
+    const mailToAddr = "billgatsby@foxmail.com,auragempop@gmail.com,service@gempop.vip";
+
+    const mailtoLink = `mailto:${mailToAddr}?subject=${encodeURIComponent(tpl.subject)}&body=${encodeURIComponent(bodyText)}`;
+    try{
+        window.location.href = mailtoLink;
+    }catch(e){
+        document.getElementById("mailtip").style.display = "block";
+        document.getElementById("mail_text").value = bodyText;
     }
+}
 
-    btns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-            setLang(btn.dataset.set);
-        });
-    });
-
-    setLang("en");
-
-    submitBtn.addEventListener("click", () => {
-        const l = body.getAttribute("data-lang");
-        let msg;
-        if (l === "cn") {
-            msg = "请复制填写内容，发送邮件到页面提供邮箱。";
-        } else if (l === "ru") {
-            msg = "Скопируйте введённые данные и отправьте на указанные почтовые адреса.";
-        } else {
-            msg = "Please copy your information and send email to our mailboxes listed above.";
-        }
-        alert(msg);
-    });
+setLang("en");
 </script>
 </body>
 </html>
