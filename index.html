@@ -325,7 +325,7 @@
             <a href="#home" class="lang-cn">首页</a>
             <a href="#home" class="lang-ru">Главная</a>
 
-            <!-- ==========【新增导航：大宗商品经济数据】========== -->
+            <!-- 修改为页内锚点，不再跳转独立页面 -->
             <a href="#economic-data" class="lang-en">Economic‑Trading Data</a>
             <a href="#economic-data" class="lang-cn">大宗商品行情</a>
             <a href="#economic-data" class="lang-ru">Данные торгов</a>
@@ -373,7 +373,7 @@
     </div>
 </div>
 
-<!-- ==========【新增大宗商品行情嵌入板块】========== -->
+<!-- ==========【行情板块直接放在首页Banner下方，主页内展示】========== -->
 <section id="economic-data">
     <div class="container">
         <h2 class="lang-en">Global Economic & Commodity Trading Data</h2>
@@ -383,6 +383,11 @@
             <!-- 注意：很多外部网站禁止iframe，加载空白属于对方网站限制，不是代码bug -->
             <iframe src="https://tradingeconomics.com/commodities" title="Commodity market data"></iframe>
         </div>
+        <p style="margin-top:12px;font-size:13px;color:#777;text-align:right;">
+            <span class="lang-en">Market data provided by Trading‑Economics. Pop‑up advertisements belong to the third‑party website, not operated by our company, for reference only.</span>
+            <span class="lang-cn">行情数据由Trading‑Economics第三方平台提供，弹窗广告归属第三方网站，本公司不运营广告，仅供参考。</span>
+            <span class="lang-ru">Данные предоставлены Trading‑Economics. Рекламные окна принадлежат стороннему сайту, только для справки.</span>
+        </p>
     </div>
 </section>
 
