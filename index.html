@@ -610,10 +610,13 @@
 </footer>
 
 <script>
-//页面加载强制回到顶部，修复打开页面自动往下跳的bug
-document.addEventListener('DOMContentLoaded',function(){
-    window.scrollTo(0,0);
-});
+//双重置顶，压制第三方iframe偷偷向下滚动
+function resetScrollTop(){
+    window.scrollTo({top:0,left:0,behavior:"instant"});
+}
+document.addEventListener('DOMContentLoaded',resetScrollTop);
+window.addEventListener('load',resetScrollTop);
+setTimeout(resetScrollTop,800);
 
 const body = document.body;
 const btns = document.querySelectorAll(".lang-group button");
