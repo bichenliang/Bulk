@@ -7,20 +7,18 @@
     <style>
         :root {
             --black: #000000;
-            --dark-bg: #0a0a0a;
+            --dark-bg: #000000;
             --dark-card: #111111;
             --gold: #d4af37;
             --gold-hover: #e6c868;
             --text-main: #c8c8c8;
             --text-light: #e0e0e0;
         }
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-
         body {
             background-color: var(--black);
             color: var(--text-main);
@@ -28,13 +26,11 @@
             line-height: 1.75;
             overflow-x: hidden;
         }
-
         .container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 24px;
         }
-
         nav {
             background-color: rgba(0, 0, 0, 0.96);
             backdrop-filter: blur(10px);
@@ -43,7 +39,6 @@
             z-index: 99;
             border-bottom: 1px solid rgba(212, 175, 55, 0.18);
         }
-
         .nav-wrap {
             display: flex;
             flex-wrap: wrap;
@@ -52,7 +47,6 @@
             min-height: 76px;
             padding: 14px 0;
         }
-
         .logo {
             color: var(--gold);
             font-size: 20px;
@@ -60,25 +54,21 @@
             letter-spacing: 0.5px;
             text-transform: uppercase;
         }
-
         .nav-links {
             display: flex;
             flex-wrap: wrap;
             gap: 18px;
             align-items: center;
         }
-
         .nav-links a {
             color: var(--text-main);
             text-decoration: none;
             font-size: 15px;
             transition: 0.2s;
         }
-
         .nav-links a:hover {
             color: var(--gold);
         }
-
         .lang-group button {
             background: transparent;
             border: 1px solid rgba(212, 175, 55, 0.45);
@@ -89,14 +79,12 @@
             cursor: pointer;
             font-size: 14px;
         }
-
         .lang-group button.active {
             background-color: var(--gold);
             color: #000000;
             border-color: var(--gold);
             font-weight: 600;
         }
-
         .btn {
             border: 1px solid var(--gold);
             color: var(--gold);
@@ -107,12 +95,10 @@
             white-space: nowrap;
             font-size: 15px;
         }
-
         .btn:hover {
             background-color: var(--gold);
             color: #000;
         }
-
         .btn-solid {
             background-color: var(--gold);
             color: #000000;
@@ -124,11 +110,9 @@
             cursor: pointer;
             transition: 0.22s;
         }
-
         .btn-solid:hover {
             background-color: var(--gold-hover);
         }
-
         .top-banner {
             width: 100%;
             min-height: 420px;
@@ -149,59 +133,49 @@
             max-width:720px;
             color:var(--text-light);
         }
-
-        #economic-data{
-            padding:70px 0;
-        }
         .iframe-wrap{
             width:100%;
             height:520px;
             border:1px solid rgba(212,175,55,0.24);
             border-radius:12px;
             overflow:hidden;
-            background:#0c0c0c;
+            background:#000000;
+            margin:40px 0;
         }
         .iframe-wrap iframe{
             width:100%;
             height:100%;
             border:none;
         }
-
         .hero {
             padding: 80px 0;
         }
-
         .hero h1 {
             color: var(--gold);
             font-size: 44px;
             margin-bottom: 20px;
             line-height: 1.3;
         }
-
         .hero p {
             color: var(--text-main);
             font-size: 17px;
             max-width: 680px;
             margin-bottom: 32px;
         }
-
         section {
             padding: 60px 0;
         }
-
         h2 {
             color: var(--gold);
             font-size: 32px;
             margin-bottom: 36px;
             line-height: 1.3;
         }
-
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(302px, 1fr));
             gap: 24px;
         }
-
         .card {
             background: var(--dark-card);
             border: 1px solid rgba(212, 175, 55, 0.24);
@@ -209,36 +183,38 @@
             padding: 28px;
             transition: transform 0.24s ease, border-color 0.24s;
         }
-
         .card:hover {
             transform: translateY(-5px);
             border-color: rgba(212, 175, 55, 0.65);
         }
-
         .card h3 {
             color: var(--gold);
             margin-bottom: 14px;
             font-size: 20px;
         }
-
         .card p {
             color: var(--text-main);
         }
-
+        .policy-block{
+            border-top:1px solid rgba(212,175,55,0.18);
+            margin-top:60px;
+            padding-top:40px;
+        }
         footer {
             border-top: 1px solid rgba(212, 175, 55, 0.18);
             padding: 36px 0;
             margin-top: 24px;
             background-color: var(--black);
         }
-
         footer p {
             color: var(--text-main);
             font-size: 14px;
         }
-
-        input,
-        textarea {
+        footer a{
+            color:var(--gold);
+            text-decoration:none;
+        }
+        input,textarea {
             width: 100%;
             background: #1a1a1a;
             border: 1px solid rgba(212, 175, 55, 0.28);
@@ -248,70 +224,33 @@
             margin-bottom: 18px;
             font-size: 15px;
         }
-
-        input:focus,
-        textarea:focus {
+        input:focus,textarea:focus {
             outline: none;
             border-color: var(--gold);
         }
-
         hr {
             border: none;
             border-top: 1px solid rgba(212, 175, 55, 0.24);
             margin: 24px 0;
         }
-
-        .lang-en,
-        .lang-cn,
-        .lang-ru {
+        .lang-en,.lang-cn,.lang-ru {
             display: none;
         }
-
-        [data-lang="en"] .lang-en {
-            display: block;
-        }
-        [data-lang="cn"] .lang-cn {
-            display: block;
-        }
-        [data-lang="ru"] .lang-ru {
-            display: block;
-        }
-
+        [data-lang="en"] .lang-en {display: block;}
+        [data-lang="cn"] .lang-cn {display: block;}
+        [data-lang="ru"] .lang-ru {display: block;}
         @media (max-width: 768px) {
-            .top-banner{
-                min-height:300px;
-            }
-            .banner-inner h1{
-                font-size:32px;
-            }
-            .iframe-wrap{
-                height:360px;
-            }
-            .hero h1 {
-                font-size: 30px;
-            }
-            h2 {
-                font-size: 26px;
-            }
-            .grid-3 {
-                grid-template-columns: 1fr;
-            }
-            .hero {
-                padding: 50px 0;
-            }
-            section {
-                padding: 44px 0;
-            }
-            .nav-links {
-                margin-top: 12px;
-                gap: 12px;
-            }
-            .container {
-                padding: 0 18px;
-            }
-            .card {
-                padding: 22px;
-            }
+            .top-banner{min-height:300px;}
+            .banner-inner h1{font-size:32px;}
+            .iframe-wrap{height:360px;}
+            .hero h1 {font-size: 30px;}
+            h2 {font-size: 26px;}
+            .grid-3 {grid-template-columns: 1fr;}
+            .hero {padding: 50px 0;}
+            section {padding: 44px 0;}
+            .nav-links {margin-top: 12px;gap: 12px;}
+            .container {padding: 0 18px;}
+            .card {padding: 22px;}
         }
     </style>
 </head>
@@ -324,10 +263,6 @@
             <a href="#top" class="lang-en">Home</a>
             <a href="#top" class="lang-cn">首页</a>
             <a href="#top" class="lang-ru">Главная</a>
-
-            <a href="#economic-data" class="lang-en">Economic‑Trading Data</a>
-            <a href="#economic-data" class="lang-cn">大宗商品行情</a>
-            <a href="#economic-data" class="lang-ru">Данные торгов</a>
 
             <a href="#target" class="lang-en">Target Goods</a>
             <a href="#target" class="lang-cn">采购商品</a>
@@ -370,22 +305,6 @@
         </div>
     </div>
 </div>
-
-<section id="economic-data">
-    <div class="container">
-        <h2 class="lang-en">Global Economic & Commodity Trading Data</h2>
-        <h2 class="lang-cn">全球大宗商品交易行情参考</h2>
-        <h2 class="lang-ru">Данные мировых товарных бирж</h2>
-        <div class="iframe-wrap">
-            <iframe src="https://tradingeconomics.com/commodities" title="Commodity market data"></iframe>
-        </div>
-        <p style="margin-top:12px;font-size:13px;color:#777;text-align:right;">
-            <span class="lang-en">Market data provided by Trading‑Economics. Pop‑up advertisements belong to the third‑party website, not operated by our company, for reference only.</span>
-            <span class="lang-cn">行情数据由Trading‑Economics第三方平台提供，弹窗广告归属第三方网站，本公司不运营广告，仅供参考。</span>
-            <span class="lang-ru">Данные предоставлены Trading‑Economics. Рекламные окна принадлежат стороннему сайту, только для справки.</span>
-        </p>
-    </div>
-</section>
 
 <div class="container hero">
     <div class="lang-en">
@@ -574,7 +493,7 @@
             <p class="lang-ru">
                 <strong>Важно:</strong><br>
                 Обязательно приложите 3 PDF‑документа: коносамент, сертификат происхождения, отчёт SGS.<br>
-                Скриншоты и фотографии не принимаются.Посредники не получат ответа.
+                Скриншоты и фотографии не принимаются. Посредники не получат ответа.
             </p>
 
             <div style="margin:20px 0;">
@@ -601,6 +520,37 @@
     </div>
 </section>
 
+<div class="container">
+    <h2 class="lang-en">Global Economic & Commodity Trading Data</h2>
+    <h2 class="lang-cn">全球大宗商品交易行情参考</h2>
+    <h2 class="lang-ru">Данные мировых товарных бирж</h2>
+    <div class="iframe-wrap">
+        <iframe src="https://tradingeconomics.com/commodities" title="Commodity market data"></iframe>
+    </div>
+    <p style="margin-top:12px;font-size:13px;color:#777;text-align:right;">
+        <span class="lang-en">Market data provided by Trading‑Economics. Pop‑up advertisements belong to the third‑party website, not operated by our company, for reference only.</span>
+        <span class="lang-cn">行情数据由Trading‑Economics第三方平台提供，弹窗广告归属第三方网站，本公司不运营广告，仅供参考。</span>
+        <span class="lang-ru">Данные предоставлены Trading‑Economics. Рекламные окна принадлежат стороннему сайту, только для справки.</span>
+    </p>
+
+    <div class="policy-block">
+        <h2>Terms of Service</h2>
+        <p>This website serves as an online business introduction platform for BILLIONAIRE INVESTMENTS CO LTD. The site is for information display and receiving supply proposals from potential suppliers only.</p>
+        <p>Submitting supply information via our contact form does not create any legally‑binding purchase contract. Business cooperation shall only take effect upon formal written contract signed by authorized representatives of both parties.</p>
+        <p>Logistics, delivery, port‑related charges and Incoterms such as FOB, CIF, CFR shall be fully negotiated and specified inside the formal contract. No verbal agreement is valid.</p>
+        <p>Our company never requests deposits, service fees or handling charges from suppliers in advance. Please watch out for fraud activities. Any party demanding prepayment is not authorized by us.</p>
+        <p>We reserve the right to decline supply offers without further explanation. Submissions from brokers and intermediaries may not receive responses.</p>
+        <p>Website content may be revised without prior notice.</p>
+
+        <br>
+        <h2>Privacy Policy</h2>
+        <p>We collect business information voluntarily submitted by suppliers through our contact form, including company name, contact person, contact details and product‑supply related materials.</p>
+        <p>Submitted data is only used for internal supplier evaluation and business communication. We will not sell, rent or disclose your business information to unrelated third parties.</p>
+        <p>We apply reasonable security measures to protect your data, yet absolute security cannot be guaranteed for data transmitted over public internet.</p>
+        <p>If you require removal of your submitted business information, please send your request to our official email address.</p>
+    </div>
+</div>
+
 <footer>
     <div class="container">
         <p class="lang-en">© 2026 BILLIONAIRE INVESTMENTS CO LTD | bulk.gempop.vip</p>
@@ -610,22 +560,6 @@
 </footer>
 
 <script>
-// 锁死页面顶部，拦截第三方iframe造成的滚动跳转
-let blockScroll = true;
-function forceTop(){
-    window.scrollTo(0,0);
-}
-// 任何滚动事件立刻拉回顶部
-window.addEventListener('scroll',()=>{
-    if(blockScroll) forceTop();
-});
-
-document.addEventListener('DOMContentLoaded',forceTop);
-window.addEventListener('load',forceTop);
-setTimeout(forceTop,400);
-setTimeout(forceTop,900);
-setTimeout(()=>{blockScroll=false;},1200);
-
 const body = document.body;
 const btns = document.querySelectorAll(".lang-group button");
 
@@ -640,7 +574,7 @@ const placeholders = {
     cn:{
         company:"公司名称",
         contact:"联系人",
-        method:"邮箱 / WhatsApp",
+        method:"Email / WhatsApp",
         product:"商品与月供应量",
         note:"报价、交货条款及其他说明"
     },
